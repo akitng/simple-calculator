@@ -1,0 +1,13 @@
+body {
+	color: #333;
+	font-family: sans-serif;
+}
+
+container {
+	width: 400px;
+	margin: auto;
+}
+
+h1 {
+	font-size: 5em;
+}
