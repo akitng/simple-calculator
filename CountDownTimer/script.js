@@ -5,6 +5,10 @@ function startCountdown() {
 	if (isNaN(minutes)) {
 		alert("Please enter a number!");
 		return;
+	}	
+	if (minutes < .05) {
+		alert("Please enter another number!");
+		return;
 	}
 	// how many seconds?
 	secondsRemaining = minutes * 60;
@@ -12,6 +16,20 @@ function startCountdown() {
 	intervalHandle = setInterval(tick, 1000);
 	//hide the form
 	document.getElementById("inputArea").style.display= "none";
+
+	
+	//create cancel button 
+	var cancelButton = document.createElement("input");
+	cancelButton.setAttribute("type", "button");
+	cancelButton.setAttribute("value", "Cancel Countdown");
+
+	//add cancel button to div named "cancel"
+	document.getElementById("cancel").appendChild(cancelButton);
+
+	//reload page when cancel button is clicked
+	cancelButton.onclick = function (){
+		location.reload();
+	};  
 }
 
 function tick() {
@@ -50,17 +68,40 @@ window.onload = function() {
 	var inputMinutes = document.createElement("input");
 	inputMinutes.setAttribute("id", "minutes");
 	inputMinutes.setAttribute("type", "text");
+	inputMinutes.setAttribute("value", "enter time in minutes");
 	
 	//create countdown button 
 	var startButton = document.createElement("input");
 	startButton.setAttribute("type", "button");
 	startButton.setAttribute("value", "Start Countdown");
 
+	//2 ways we can start timer...with onclick or addeventlistener
 	startButton.onclick = function() {
 		startCountdown();
 	};
 
-//add the input field and button to the DOM, to the div called "inputArea"
-document.getElementById("inputArea").appendChild(inputMinutes);
-document.getElementById("inputArea").appendChild(startButton);
+	//startButton.addEventListener("click", startCountdown);
+	//document.addEventListener("onkeypress", startCoundown);
+
+	//create clear button
+	var clearButton = document.createElement("input");
+	clearButton.setAttribute("type", "button");
+	clearButton.setAttribute("value", "Clear");
+
+	//input field is emptied when button is clicked
+	clearButton.onclick = function() {
+		document.getElementById("minutes").value = "";
+	};
+
+	//input field is cleared of hint when clicked in
+	inputMinutes.onclick = function() {
+		inputMinutes.setAttribute("value", "");
+	};
+
+
+	//add the input field, submit and clear button to the DOM, 
+	//to the div called "inputArea"
+	document.getElementById("inputArea").appendChild(inputMinutes);
+	document.getElementById("inputArea").appendChild(startButton);
+	document.getElementById("inputArea").appendChild(clearButton);
 };
