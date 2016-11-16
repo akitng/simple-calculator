@@ -1,0 +1,68 @@
+body {
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	text-align: center;
+}
+
+#container {
+	width: 33%;
+	height: 100%;
+	border: 10px solid black;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#answer {
+	width: 83%;
+	height: 50px;
+	border: 1px solid black;
+	margin: 10px auto 10px auto;
+}
+
+#buttons {
+	width: 100%;
+	margin-bottom: 10px;
+}
+input {
+	width: 20%;
+	height: 50px;
+	margin: auto;
+	display: inline-block;
+	font-size: 20px;
+}
+
+
+
+
+
+
+/* CSS style for table
+	
+	body {
+	width: 100%;
+	margin: auto;
+	text-align: center;
+}
+
+table {
+	width: 50%;
+	margin: 30px auto auto auto;
+	
+}
+
+th {
+	height:80px;
+}
+
+td {
+	width: 50px;
+	height: 50px;
+	text-align: center;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+*/
