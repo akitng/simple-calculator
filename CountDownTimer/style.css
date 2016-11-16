@@ -22,3 +22,12 @@ h1 {
 h2 {
 	font-size: 75px;
 }
+
+#startButton {
+	margin: 0 5px 0 5px;
+}
+
+#minutes {
+	font-style: italic;
+	color: red;
+}
