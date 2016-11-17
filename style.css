@@ -13,11 +13,13 @@ body {
 	margin-left: auto;
 }
 
-#answer {
+#inputField {
 	width: 83%;
 	height: 50px;
 	border: 1px solid black;
 	margin: 10px auto 10px auto;
+	
+
 }
 
 #buttons {

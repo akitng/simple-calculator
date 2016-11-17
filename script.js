@@ -1,21 +1,104 @@
-var	numberSeven = document.getElementsByClassName("number")[0].innerHTML;
-var	numberEight = document.getElementsByClassName("number")[1].innerHTML;
-var	numberNine = document.getElementsByClassName("number")[2].innerHTML;
-var	numberFour = document.getElementsByClassName("number")[3].innerHTML;
-var	numberFive = document.getElementsByClassName("number")[4].innerHTML;
-var	numberSix = document.getElementsByClassName("number")[5].innerHTML;
-var	numberOne = document.getElementsByClassName("number")[6].innerHTML;
-var	numberTwo = document.getElementsByClassName("number")[7].innerHTML;
-var	numberThree = document.getElementsByClassName("number")[8].innerHTML;
+function numberOne() {
+	var numberOneButton = document.getElementById("one");
+	var numberOneValue =  Number(document.getElementById("one").value);
 
-
-numberSeven.onclick = function () {
-	document.getElementbyId("answer").innerHTML(numberSeven);
-	console.log("notworking");
+	numberOneButton.onclick = function() {
+		var text = document.createTextNode(numberOneValue);
+		document.getElementById("inputField").appendChild(text);
+	};
 }
 
-//check to see if grabbing the right elements. delete later
-console.log(numberSeven+numberEight+numberNine+numberFour+numberFive+numberSix+
-	numberOne+numberTwo+numberThree);
+function numberTwo() {
+	var numberTwoButton = document.getElementById("two");
+	var numberTwoValue = Number(document.getElementById("two").value);
+	numberTwoButton.onclick = function() {
+		var text = document.createTextNode(numberTwoValue);
+		document.getElementById("inputField").appendChild(text);
+	};
+}
+
+
+function add() {
+	var addButton = document.getElementById("add");
+	var addSign = document.getElementById("add").value;
+
+	addButton.onclick = function() {
+		var text = document.createTextNode(addSign);
+		document.getElementById("inputField").appendChild(text);
+	};
+}
+
+function subtract() {
+	var subtractButton = document.getElementById("subtract");
+	var subtractSign = document.getElementById("subtract").value;
+
+	subtractButton.onclick = function() {
+		var text = document.createTextNode(subtractSign);
+		document.getElementById("inputField").appendChild(text);
+	};
+}
+
+function multiply() {
+	var multiplyButton = document.getElementById("multiply");
+	var multiplySign = document.getElementById("multiply").value;
+
+	multiplyButton.onclick = function() {
+		var text = document.createTextNode(multiplySign);
+		document.getElementById("inputField").appendChild(text);
+	};
+}
+
+function divide() {
+	var divideButton = document.getElementById("divide");
+	var divideSign = document.getElementById("divide").value;
+
+	divideButton.onclick = function() {
+		var text = document.createTextNode(divideSign);
+		document.getElementById("inputField").appendChild(text);
+	};
+}
+
+function calculate() {
+	var equalButton = document.getElementById("equal");
+	equalButton.onclick = function() {
+		var calculate = document.getElementById("inputField").textContent;
+		var answer = eval(calculate); 
+		document.getElementById("inputField").innerHTML= answer;
+	};
+}
+
+function clear() {
+	var clearButton = document.getElementById("clear");
+	clearButton.onclick = function() {
+	document.getElementById("inputField").innerHTML = "";
+	console.log('this works');
+	};
+}
+
+
+numberOne();
+numberTwo();
+add();
+subtract();
+multiply();
+divide();
+calculate();
+clear();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
