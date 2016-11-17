@@ -1,37 +1,44 @@
 body {
 	width: 100%;
 	height: 100%;
-	margin: auto;
 	text-align: center;
 }
 
 #container {
 	width: 33%;
-	height: 100%;
-	border: 10px solid black;
 	margin-right: auto;
 	margin-left: auto;
+	border: 1px solid black;
 }
 
 #inputField {
 	width: 83%;
-	height: 50px;
-	border: 1px solid black;
+	height: 30px;
+	border: 1px solid blue;
 	margin: 10px auto 10px auto;
-	
-
 }
+
+#answerField {
+	width: 83%;
+	height: 30px;
+	border: 1px solid orange;
+	margin: 10px auto 10px auto;
+}
+
 
 #buttons {
 	width: 100%;
+	margin-top: 10px;
 	margin-bottom: 10px;
+	border: 1px auto 1px green;
 }
+
 input {
 	width: 20%;
-	height: 50px;
-	margin: auto;
+	height: 30px;
 	display: inline-block;
 	font-size: 20px;
+	margin: auto;
 }
 
 
