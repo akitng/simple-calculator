@@ -43,11 +43,6 @@ body {
     width: 100%;
 }
 
-#operators2 {
-    display: block;
-    width: 15%;
-}
-
 input {
     width: 60px;
     height: 50px;

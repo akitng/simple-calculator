@@ -1,4 +1,8 @@
-var enteredValue = [];  //putting entered values into this array
+//putting user input into this array
+var enteredValue = [];  
+//made this global so undo() and calculate() can use 
+//to enable equalButton
+var equalButton = document.getElementById("equal");
 
 function numberZero() {
 	var numberZeroButton = document.getElementById("zero");
@@ -116,22 +120,19 @@ function decimal() {
 	var decimalValue = document.getElementById("decimal").value;
 
 	decimalButton.onclick = function() {
-		var text = document.createTextNode(decimalValue);
-		document.getElementById("inputField").appendChild(text);
-		enteredValue.push(decimalValue);
-/*
-		//making sure you can't enter a decimal twice in a number
-		for (var i = 0 ; i < enteredValue.length; i++) {}
+		//this prevents two decimals in a row
 		var arrayToString = enteredValue.join("");
-			if (!arrayToString.match(/^\d+(\.\d+)?([+\-*\/]\d+(\.\d+)?)*$/)) {
+		if (arrayToString.match(/^\d+(\.\d+)?([+\-*\/]\d+(\.\d+)?)*$/)) {
+			var text = document.createTextNode(decimalValue);
+			document.getElementById("inputField").appendChild(text);
+			enteredValue.push(decimalValue);
+		} else { 	
 			var newText = "";
 			var text = document.createTextNode(newText);
 			document.getElementById("inputField").appendChild(text);	
-*/			
+		}	
 	};
 }
-
-
 
 function add() {
 	var addButton = document.getElementById("add");
@@ -140,7 +141,7 @@ function add() {
 	addButton.onclick = function() {
 		//if there is no first number then the the entry turns into "0 + "		
 		if (!enteredValue[0]) {
-			var newText = ("0" +  " " + addSign);
+			var newText = ("0" + addSign);
 			var text = document.createTextNode(newText);
 			document.getElementById("inputField").appendChild(text);
 			enteredValue.push(newText); 
@@ -164,7 +165,7 @@ function subtract() {
 	subtractButton.onclick = function() {
 		//if there is no first number then the the entry turns into "0 - "		
 		if (!enteredValue[0]) {
-			var newText = ("0" +  " " + subtractSign);
+			var newText = ("0" + subtractSign);
 			var text = document.createTextNode(newText);
 			document.getElementById("inputField").appendChild(text);
 			enteredValue.push(newText); 
@@ -188,7 +189,7 @@ function multiply() {
 	multiplyButton.onclick = function() {
 		//if there is no first number then the the entry turns into "0 - "		
 		if (!enteredValue[0]) {
-			var newText = ("0" +  " " + multiplySign);
+			var newText = ("0" + multiplySign);
 			var text = document.createTextNode(newText);
 			document.getElementById("inputField").appendChild(text);
 			enteredValue.push(newText); 
@@ -211,7 +212,7 @@ function divide() {
 
 	divideButton.onclick = function() {
 		if (!enteredValue[0]) {
-			var newText = ("0" +  " " + divideSign);
+			var newText = ("0" + divideSign);
 			var text = document.createTextNode(newText);
 			document.getElementById("inputField").appendChild(text);
 			enteredValue.push(newText); 
@@ -228,9 +229,8 @@ function divide() {
 	};
 }
 
-//need to prevent repeated equal sign being appended to input field
 function calculate() {
-	var equalButton = document.getElementById("equal");
+	
 	var equalSign = document.getElementById("equal").value;
 
 	equalButton.onclick = function() {
@@ -239,10 +239,11 @@ function calculate() {
 		var text = document.createTextNode(equalSign);
 		document.getElementById("inputField").appendChild(text);
 		document.getElementById("answerField").innerHTML= answer;
-		console.log(enteredValue);
+		//prevents repeated equal sign from being appended to input field
+		equalButton.disabled = true;
+		console.log(enteredValue); //just checking the array
 	};
 }
-
 
 function clear() {
 	var clearButton = document.getElementById("clear");
@@ -250,9 +251,11 @@ function clear() {
 	document.getElementById("inputField").innerHTML = "";
 	document.getElementById("answerField").innerHTML = "";
 	enteredValue = [];
+	//this was disabled in calculate() 
+	equalButton.disabled = false;
 	};
 }
-//need to lock the undo button once answer is submitted
+
 function undo() {
 	var undoButton = document.getElementById("undo");
 
@@ -260,6 +263,10 @@ function undo() {
 		enteredValue.pop();
 		var text = enteredValue.join("");
 		document.getElementById("inputField").innerHTML = text;
+		//this clears the answer field if the undo button is clicked
+		document.getElementById("answerField").innerHTML = "";
+		//this was disabled in calculate()
+		equalButton.disabled = false;
 	};
 }
 
@@ -284,24 +291,3 @@ divide();
 calculate();
 clear();
 undo();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
