@@ -1,0 +1,55 @@
+body {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+#container {
+    width: 25%;
+		margin: 50px auto 0px auto;
+    border: 3px solid black;
+}
+
+#inputField {
+    width: 100%;
+    height: 30px;
+    border: 1px solid black;
+    margin: 10px auto 10px auto;
+    font-size: 20px;
+}
+
+#answerField {
+    width: 100%;
+    height: 30px;
+    border: 1px solid black;
+    margin: 10px auto 10px auto;
+    font-size: 30px;
+}
+
+#buttons {
+    width: 100%;
+    height: 67%;
+    margin-bottom: 10px;
+}
+
+#operators {
+    display: inline-block;
+    width: 100%;
+    margin-left: 0px;
+}
+
+#numbers {
+    display: inline-block;
+    width: 100%;
+}
+
+input {
+    width: 60px;
+    height: 50px;
+    font-size: 20px;
+    margin: 0px
+}
+
+#clear {
+    width: 188px;
+}
