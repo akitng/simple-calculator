@@ -1,79 +1,55 @@
 body {
-	width: 100%;
-	height: 100%;
-	text-align: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
 }
 
 #container {
-	width: 33%;
-	margin-right: auto;
-	margin-left: auto;
-	border: 1px solid black;
+    width: 25%;
+		margin: 50px auto 0px auto;
+    border: 3px solid black;
 }
 
 #inputField {
-	width: 83%;
-	height: 30px;
-	border: 1px solid blue;
-	margin: 10px auto 10px auto;
+    width: 100%;
+    height: 30px;
+    border: 1px solid black;
+    margin: 10px auto 10px auto;
+    font-size: 20px;
 }
 
 #answerField {
-	width: 83%;
-	height: 30px;
-	border: 1px solid orange;
-	margin: 10px auto 10px auto;
+    width: 100%;
+    height: 30px;
+    border: 1px solid black;
+    margin: 10px auto 10px auto;
+    font-size: 30px;
 }
 
-
 #buttons {
-	width: 100%;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	border: 1px auto 1px green;
+    width: 100%;
+    height: 67%;
+    margin-bottom: 10px;
+}
+
+#operators {
+    display: inline-block;
+    width: 100%;
+    margin-left: 0px;
+}
+
+#numbers {
+    display: inline-block;
+    width: 100%;
 }
 
 input {
-	width: 20%;
-	height: 10%;
-	display: inline-block;
-	font-size: 20px;
-	margin: 5px 5px 5px 5px;
+    width: 60px;
+    height: 50px;
+    font-size: 20px;
+    margin: 0px
 }
 
-
-
-
-
-
-
-
-/* CSS style for table
-	
-	body {
-	width: 100%;
-	margin: auto;
-	text-align: center;
+#clear {
+    width: 188px;
 }
-
-table {
-	width: 50%;
-	margin: 30px auto auto auto;
-	
-}
-
-th {
-	height:80px;
-}
-
-td {
-	width: 50px;
-	height: 50px;
-	text-align: center;
-}
-
-table, th, td {
-	border: 1px solid black;
-}
-
-*/
